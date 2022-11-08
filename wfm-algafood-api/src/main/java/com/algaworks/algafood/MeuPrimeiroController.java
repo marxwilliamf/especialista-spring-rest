@@ -4,12 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
+@Controller //bean
 public class MeuPrimeiroController {
 
 	@GetMapping("/hello")
 	@ResponseBody
 	public String hello() {		
-		return "Hello/Olá/Ola!";
+		return "Hello/Olá/Hola!";
 	}	
 }
