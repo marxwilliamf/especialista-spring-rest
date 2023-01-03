@@ -6,7 +6,7 @@ import com.algaworks.algafood.modelo.Cliente;
 import com.algaworks.algafood.notificacao.Notificador;
 
 
-@Component //bean //componente gerenciado pelo spring que responde requisições web
+//@Component //bean //componente gerenciado pelo spring que responde requisições web
 public class AtivacaoClienteService {
 
 	private Notificador notificador;
@@ -21,7 +21,7 @@ public class AtivacaoClienteService {
 		
 		cliente.ativar();
 		
-		this.notificador.notificar(cliente, "Seu cadastro no sistema est� ativo!");
+		this.notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
 	
 	}
 	
