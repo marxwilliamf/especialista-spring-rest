@@ -1,24 +1,31 @@
 package com.algaworks.algafood.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.algaworks.algafood.modelo.Cliente;
 import com.algaworks.algafood.notificacao.Notificador;
 
 
-//@Component //bean //componente gerenciado pelo spring que responde requisições web
+@Component //bean //componente gerenciado pelo spring que responde requisições web
 public class AtivacaoClienteService {
 
 	private Notificador notificador;
 	
+	@Autowired //Define qual constreutor será usado, caso so tenho um construtor é opcional
 	public AtivacaoClienteService(Notificador notificador) {
 		this.notificador = notificador;
 		
 		System.out.println("AtivacaoClienteService: " + notificador);
 	}
 
+	public AtivacaoClienteService(String qualquer) { //Construtor 2
+		//qualquer coisa
+	}
+	
+	
 	public void ativar(Cliente cliente) {
-		
 		cliente.ativar();
-		
 		this.notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
 	
 	}
