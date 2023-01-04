@@ -10,24 +10,30 @@ import com.algaworks.algafood.notificacao.Notificador;
 @Component //bean //componente gerenciado pelo spring que responde requisições web
 public class AtivacaoClienteService {
 
+	
 	private Notificador notificador;
 	
-	@Autowired //Define qual constreutor será usado, caso so tenho um construtor é opcional
-	public AtivacaoClienteService(Notificador notificador) {
-		this.notificador = notificador;
-		
-		System.out.println("AtivacaoClienteService: " + notificador);
-	}
-
-	public AtivacaoClienteService(String qualquer) { //Construtor 2
-		//qualquer coisa
-	}
+//	@Autowired //Define qual constreutor será usado, caso so tenho um construtor é opcional
+//	public AtivacaoClienteService(Notificador notificador) {
+//		this.notificador = notificador;
+//		
+//		System.out.println("AtivacaoClienteService: " + notificador);
+//	}
+//
+//	public AtivacaoClienteService(String qualquer) { //Construtor 2
+//		//qualquer coisa
+//	}
 	
 	
 	public void ativar(Cliente cliente) {
 		cliente.ativar();
 		this.notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
 	
+	}
+
+	@Autowired //Não basta apenas setar precisa autoqired
+	public void setNotificador(Notificador notificador) {
+		this.notificador = notificador;
 	}
 	
 }
