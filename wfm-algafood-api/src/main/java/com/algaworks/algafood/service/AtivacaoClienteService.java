@@ -1,5 +1,7 @@
 package com.algaworks.algafood.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,21 +13,20 @@ import com.algaworks.algafood.notificacao.Notificador;
 public class AtivacaoClienteService {
 
 	@Autowired(required = false)
-	private Notificador notificador;
-	
-
-	
+	private List<Notificador> notificadores; //Recebe uma lista de notificadores
 	
 	public void ativar(Cliente cliente) {
-		cliente.ativar();
-		if(notificador != null) {
-			this.notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
-		} else { //com @Autowired(required = false) //caso não tenha uma implentação de Notificador com @Component como em NotificadorEmail
-			System.out.println("Não existe notificador, mas cliente foi ativado!");
-		}
-	}
-
 	
+		cliente.ativar();
+	
+		for(Notificador notificador : notificadores){ //agora se tiver mais de um notificador ele os usará para notificar
+			if(notificador != null) {
+				notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
+			} else { //com @Autowired(required = false) //caso não tenha uma implentação de Notificador com @Component como em NotificadorEmail
+				System.out.println("Não existe notificador, mas cliente foi ativado!");
+			}
+		}
+	}	
 }
 
 //Digamos que no sistema teriamos centenas ou milhares de classes que usam notificador por email, e por algum motivo queira 
