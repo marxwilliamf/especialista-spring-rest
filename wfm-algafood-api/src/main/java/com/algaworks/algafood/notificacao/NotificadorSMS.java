@@ -1,11 +1,12 @@
 package com.algaworks.algafood.notificacao;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.algaworks.algafood.modelo.Cliente;
+import com.algaworks.algafood.modelo.NivelUrgencia;
+import com.algaworks.algafood.modelo.TipoDoNotificador;
 
-@Qualifier("urgente") //("sms") poderia colocar sms mas deixaria o sistema mais acoplado, em casos de mudanças
+@TipoDoNotificador(NivelUrgencia.URGENTE)
 @Component
 public class NotificadorSMS implements Notificador { //implements Notificador
 		

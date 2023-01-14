@@ -1,20 +1,18 @@
 package com.algaworks.algafood.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import com.algaworks.algafood.modelo.Cliente;
+import com.algaworks.algafood.modelo.NivelUrgencia;
+import com.algaworks.algafood.modelo.TipoDoNotificador;
 import com.algaworks.algafood.notificacao.Notificador;
 
 
 @Component //bean //componente gerenciado pelo spring que responde requisições web
 public class AtivacaoClienteService {
 
-	@Qualifier("urgente") //em ves de nomear os qualifiers de email e sms onde teremos que mudar a classe Ativação caso queiramos mudar o notificador
-	//pode se colocar normal e urgente que deixa o sistema menos acoplado a uma implementação em específico
+	@TipoDoNotificador(NivelUrgencia.URGENTE)
 	@Autowired(required = false)
 	private Notificador notificador; //Recebe uma lista de notificadores
 	
