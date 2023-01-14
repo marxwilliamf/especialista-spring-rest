@@ -12,7 +12,7 @@ import com.algaworks.algafood.notificacao.Notificador;
 @Component //bean //componente gerenciado pelo spring que responde requisições web
 public class AtivacaoClienteService {
 
-	@TipoDoNotificador(NivelUrgencia.URGENTE)
+	@TipoDoNotificador(NivelUrgencia.SEM_URGENCIA)
 	@Autowired(required = false)
 	private Notificador notificador; //Recebe uma lista de notificadores
 	

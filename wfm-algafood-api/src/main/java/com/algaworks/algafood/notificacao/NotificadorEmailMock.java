@@ -7,20 +7,19 @@ import com.algaworks.algafood.modelo.Cliente;
 import com.algaworks.algafood.modelo.NivelUrgencia;
 import com.algaworks.algafood.modelo.TipoDoNotificador;
 
-
-@Profile("prod")
+@Profile("dev")
 @TipoDoNotificador(NivelUrgencia.SEM_URGENCIA)
 @Component
-public class NotificadorEmail implements Notificador { //implements Notificador
+public class NotificadorEmailMock implements Notificador { //implements Notificador
 	
-	public NotificadorEmail() {
-		System.out.println("NotificadorEmail REAL");
+	public NotificadorEmailMock() {
+		System.out.println("NotificadorEmail MOCK");
 	}
-	
+
 	@Override
 	public void notificar(Cliente cliente, String mensagem) {
 		
-		System.out.printf("Notificando %s através do E-mail %s: %s\n", 
+		System.out.printf("Mock: Notificaçao seria enviada para %s através do E-mail %s: %s\n", 
 				cliente.getNome(), cliente.getEmail(), mensagem);
 	}
 
