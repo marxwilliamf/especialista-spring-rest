@@ -13,19 +13,12 @@ import com.algaworks.algafood.notificacao.Notificador;
 public class AtivacaoClienteService {
 
 	@Autowired(required = false)
-	private List<Notificador> notificadores; //Recebe uma lista de notificadores
+	private Notificador notificador; //Recebe uma lista de notificadores
 	
 	public void ativar(Cliente cliente) {
 	
 		cliente.ativar();
-	
-		for(Notificador notificador : notificadores){ //agora se tiver mais de um notificador ele os usará para notificar
-			if(notificador != null) {
-				notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
-			} else { //com @Autowired(required = false) //caso não tenha uma implentação de Notificador com @Component como em NotificadorEmail
-				System.out.println("Não existe notificador, mas cliente foi ativado!");
-			}
-		}
+		notificador.notificar(cliente, "Seu cadastro no sistema está ativo!");
 	}	
 }
 
