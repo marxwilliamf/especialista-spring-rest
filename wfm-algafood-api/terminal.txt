@@ -15,3 +15,19 @@ java -jar target\wfm-algafood-api-0.0.1-SNAPSHOT.jar
 $Env:SERVER_PORT=8083
 $Env:SERVER_PORT //mostra a porta configurada
 java -jar .\target\wfm-algafood-api-0.0.1-SNAPSHOT.jar  //o projeto esta configorado para rodar em 8080 ma com a variável de ambiente ele executa em 8083
+
+
+java -jar .\target\wfm-algafood-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=production
+
+
+//Executando profiles com variáveis de ambiente aula "2.28. Ativando o Spring Profile por linha de comando e variável de ambiente"
+
+PowerShell 7.3.1
+
+$Env:SPRING_PROFILES_ACTIVE="production"
+
+//Dos
+set SPRING_PROFILES_ACTIVE=production
+
+
+
