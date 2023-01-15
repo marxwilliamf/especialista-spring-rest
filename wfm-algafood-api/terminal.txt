@@ -1,0 +1,17 @@
+java -jar .\target\wfm-algafood-api-0.0.1-SNAPSHOT.jar //executa na porta configurado no projeto 8080
+
+java -jar .\target\wfm-algafood-api-0.0.1-SNAPSHOT.jar --server.port=8082  //muda a porta para 8082
+
+
+
+//Com Varoáveis de Ambiente
+
+//Dos
+set SERVER_PORT=8085  //Setando variável de ambiente
+echo %SERVER_PORT%    //mostrando variável
+java -jar target\wfm-algafood-api-0.0.1-SNAPSHOT.jar
+
+//PowerShell 7.3.1
+$Env:SERVER_PORT=8083
+$Env:SERVER_PORT //mostra a porta configurada
+java -jar .\target\wfm-algafood-api-0.0.1-SNAPSHOT.jar  //o projeto esta configorado para rodar em 8080 ma com a variável de ambiente ele executa em 8083
