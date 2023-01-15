@@ -10,7 +10,7 @@ import com.algaworks.algafood.modelo.NivelUrgencia;
 import com.algaworks.algafood.modelo.TipoDoNotificador;
 
 
-@Profile("prod")
+@Profile("production")
 @TipoDoNotificador(NivelUrgencia.SEM_URGENCIA)
 @Component
 public class NotificadorEmail implements Notificador { //implements Notificador
