@@ -12,19 +12,19 @@ import com.algaworks.algafood.modelo.TipoDoNotificador;
 import com.algaworks.algafood.notificacao.Notificador;
 
 
-@Component //bean //componente gerenciado pelo spring que responde requisições web
+//@Component //bean //componente gerenciado pelo spring que responde requisições web
 public class AtivacaoClienteService {
 	
 	@TipoDoNotificador(NivelUrgencia.SEM_URGENCIA)
 	@Autowired(required = false)
 	private Notificador notificador; //Recebe uma lista de notificadores
 	
-	@PostConstruct  //callback
+	//@PostConstruct  //callback
 	public void init () {
 		System.out.println("INIT " + notificador);
 	}
 	
-	@PreDestroy  //callback
+	//@PreDestroy  //callback
 	public void destroy () {
 		System.out.println("DESTROY");
 	}
