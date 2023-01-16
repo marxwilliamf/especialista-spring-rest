@@ -11,10 +11,10 @@
 	
 	
 	<groupId>com.algaworks</groupId>
-	<artifactId>wfm-algafood-api</artifactId>
+	<artifactId>wfm-algafood-api-intro</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>wfm-algafood-api</name>
-	<description>API de delivery de comida</description>
+	<name>wfm-algafood-api-intro</name>
+	<description>API de delivery de comida - Starter</description>
 	
 	<properties>
 		<java.version>12</java.version>
