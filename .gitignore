@@ -15,3 +15,11 @@ wfm-algafood-api/.classpath
 wfm-algafood-api/.project
 wfm-algafood-api/.settings/
 wfm-algafood-api/bin/
+wfm-algafood-api/.vscode/
+wfm-algafood-api/.factorypath
+
+wfm-algafood-api-intro/.classpath
+wfm-algafood-api-intro/.project
+wfm-algafood-api-intro/.settings/
+wfm-algafood-api-intro/bin/
+wfm-algafood-api-intro/.vscode/
