@@ -12,7 +12,7 @@ public class Cozinha {
 	@Id
 	private Long id;
 	
-	@Column(name = "nom_cozinha")
+	@Column(name = "nom_cozinha")  //(name = "nom_cozinha", length = 50)
 	private String nome;
 
 	public Long getId() {

@@ -14,7 +14,7 @@ public class Restaurante {
 	
 	private String nome;
 	
-	@Column(name = "taxa_frete")
+	@Column(name = "taxa_frete")  //esse name é desnecessário pois ele já coloca o underscore automático
 	private BigDecimal taxaFrete;
 
 	public Long getId() {
