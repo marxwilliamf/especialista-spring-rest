@@ -2,10 +2,11 @@ package com.algaworks.algafood.jpa;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.algaworks.algafood.domain.model.Cozinha;
 
@@ -22,4 +23,12 @@ public class CadastroCozinha {
 			
 			return manager.createQuery("from Cozinha", Cozinha.class).getResultList();
 		}
+		
+		
+		@Transactional  //indica que o metodo vai ser rodado dentro de uma transação
+		public Cozinha cozinhaAdicionar(Cozinha cozinha) {
+			return manager.merge(cozinha);
+		}
+		
+		
 }
