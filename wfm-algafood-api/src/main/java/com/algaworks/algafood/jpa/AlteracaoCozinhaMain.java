@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationContext;
 import com.algaworks.algafood.WfmAlgafoodApiApplication;
 import com.algaworks.algafood.domain.model.Cozinha;
 
-public class InclusaoCozinhaMain {
+public class AlteracaoCozinhaMain {
 
 	public static void main(String[] args) {
 		//Application context gerencia o contexto da aplicação Spring, não ´pe uma aplicação web 
@@ -17,11 +17,13 @@ public class InclusaoCozinhaMain {
 		
 		CadastroCozinha cadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
 		
+		
 		Cozinha cozinha1 = new Cozinha();
+		cozinha1.setId(1L);
 		cozinha1.setNome("Brasileira");
 
-		Cozinha cozinha2 = new Cozinha();
-		cozinha2.setNome("Japonesa");
+		Cozinha cozinha2 = cadastroCozinha.buscar(2L);
+		cozinha2.setNome("Gaúcha");
 
 		//merge não atualiza cozinha1 por isso precisa pegar o return para setar a nova cozinha atualizada já com o Id Gerado
 		cozinha1 = cadastroCozinha.salvar(cozinha1); 

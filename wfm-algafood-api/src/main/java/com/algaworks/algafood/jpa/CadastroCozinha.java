@@ -30,7 +30,7 @@ public class CadastroCozinha {
 		}
 		
 		@Transactional  //indica que o metodo vai ser rodado dentro de uma transação
-		public Cozinha cozinhaAdicionar(Cozinha cozinha) {
+		public Cozinha salvar(Cozinha cozinha) {
 			return manager.merge(cozinha);
 		}
 		
