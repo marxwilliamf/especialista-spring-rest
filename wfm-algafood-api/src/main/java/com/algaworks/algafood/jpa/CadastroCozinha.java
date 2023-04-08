@@ -10,6 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.algaworks.algafood.domain.model.Cozinha;
 
+
+//Pincelada sobre  padrão Agregate e seu aAregate Root de uma instacia pricipal dentro de um domínio, e como uma 
+//instancias de fora do dominio agregado devem referenciar o a classe de Agregate Root para manter a integridade
+
+//https://www.amazon.com.br/Domain-Driven-Design-Eric-Evans/dp/8550800651
+//https://martinfowler.com/bliki/DDD_Aggregate.html
+
 @Component
 public class CadastroCozinha {
 
