@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 
 import com.algaworks.algafood.WfmAlgafoodApiApplication;
 import com.algaworks.algafood.domain.model.Cozinha;
+import com.algaworks.algafood.domain.repository.CozinhaRepository;
 
 public class ExclusaoCozinhaMain {
 
@@ -15,7 +16,7 @@ public class ExclusaoCozinhaMain {
 				.web(WebApplicationType.NONE)
 				.run(args);
 		
-		CadastroCozinha cadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
+		CozinhaRepository cozinhas = applicationContext.getBean(CozinhaRepository.class);
 		
 		
 		Cozinha cozinha = new Cozinha();
@@ -23,7 +24,7 @@ public class ExclusaoCozinhaMain {
 
 
 		//merge não atualiza cozinha1 por isso precisa pegar o return para setar a nova cozinha atualizada já com o Id Gerado
-		cadastroCozinha.remover(cozinha); 
+		cozinhas.remover(cozinha); 
 	
 	}
 }
