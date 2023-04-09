@@ -4,9 +4,12 @@ import java.math.BigDecimal;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ForeignKey;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -24,5 +27,9 @@ public class Restaurante {
 	
 	@Column(name = "taxa_frete")  //esse name é desnecessário pois ele já coloca o underscore automático
 	private BigDecimal taxaFrete;	
+	
+	@ManyToOne
+	@JoinColumn(name =  "cozinha_id", foreignKey = @ForeignKey(name = "fk_restaurante_cozinha")) //código de outro curso
+	private Cozinha cozinha;
 	
 }
