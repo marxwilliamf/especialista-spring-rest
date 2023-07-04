@@ -18,7 +18,7 @@
 	
 	<properties>
 		<jakarta-servlet.version>5.0.0</jakarta-servlet.version>
-		<java.version>17</java.version>
+		<java.version>19</java.version>
 	</properties>
 	
 	<dependencies>

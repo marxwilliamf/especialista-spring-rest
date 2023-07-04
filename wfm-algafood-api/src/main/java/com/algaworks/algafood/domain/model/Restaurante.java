@@ -29,7 +29,7 @@ public class Restaurante {
 	private BigDecimal taxaFrete;	
 	
 	@ManyToOne
-	@JoinColumn(name =  "cozinha_id", foreignKey = @ForeignKey(name = "fk_restaurante_cozinha")) //código de outro curso
+	@JoinColumn(name =  "cozinha_id", foreignKey = @ForeignKey(name = "fk_restaurante_cozinha"))
 	private Cozinha cozinha;
 	
 }
