@@ -25,7 +25,6 @@ public class RestauranteRepositoryImp implements RestauranteRepository {
 
 	@Override
 	public Restaurante porId(Long id) {
-		// 
 		return manager.find(Restaurante.class, id);
 	}
 
