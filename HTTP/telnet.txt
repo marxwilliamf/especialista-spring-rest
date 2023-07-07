@@ -1,0 +1,15 @@
+##################################################
+Não Testado
+###########
+
+
+bash
+    telnet / http://sitetal.com.br 80
+        Conectado:
+
+GET / HTTP/1.1
+Host: http://google.com.br
+Accept: text/html
+
+
+
