@@ -3,6 +3,7 @@ package com.algaworks.algafood.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,17 +28,23 @@ import com.algaworks.algafood.domain.repository.CozinhaRepository;
 ///////////////////////////////////
 
 @RestController
-@RequestMapping("/cozinhas")
+@RequestMapping("/cozinhas")//em caso de mais de um parametro tem que especificar value (value = "/cozinhas", produces = MediaType.APPLICATION_JSON_VALUE) //é possivel fazer uma definição para toda classe também
 public class CozinhaController {
 
 
 	@Autowired
 	CozinhaRepository cozinhaRepository;
 	
-	@GetMapping
-	public List<Cozinha> listar() {
+	//@GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }) //este método aceitará os dois desse jeito
+	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)  //tanto faz usar a constante ou escrever, mas é mais recomandável constante //(produces = "application/json")
+	public List<Cozinha> listar1() {
+		System.out.println("LISTAR 1");
 		return cozinhaRepository.todas();
 	}
 	
-	
+	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE) //também pode ter um metodo para cada formato
+	public List<Cozinha> listar2() {
+		System.out.println("LISTAR 2");
+		return cozinhaRepository.todas();
+	}
 }
