@@ -16,6 +16,10 @@ import com.algaworks.algafood.domain.repository.CozinhaRepository;
 ///////////////////////////////////
 //C:\Windows\System32\drivers\etc\hosts
 //127.0.0.1		api.algafood.local
+//GET localhost:8080/cozinhas
+//GET api.algafood.local:8080/cozinhas
+///////////////////////////////////
+// GET /cozinhas HTTP/1.1
 ///////////////////////////////////
 //@Controller
 //@ResponseBody

@@ -28,14 +28,14 @@ public class Estado {
 	@Column(nullable = false)
 	private String nome;
 	
-	@OneToMany(mappedBy = "estado", fetch = FetchType.EAGER)
-	List<Cidade> cidades;
+//	@OneToMany(mappedBy = "estado", fetch = FetchType.EAGER)
+//	List<Cidade> cidades;
 	
-	public void listarCidades() {
-		for(Cidade c:cidades) {
-			c.printCmd();
-		}
-	}
+//	public void listarCidades() {
+//		for(Cidade c:cidades) {
+//			c.printCmd();
+//		}
+//	}
 	
 	
 	
@@ -46,7 +46,7 @@ public class Estado {
 	public static void listar(List<Estado> todosEstados) {
 		for(Estado estado: todosEstados) {
 			estado.printCmd();
-			estado.listarCidades();
+			//estado.listarCidades();
 		}
 	}
 

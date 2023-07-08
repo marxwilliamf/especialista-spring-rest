@@ -30,7 +30,7 @@ public class Cidade {
 	@Column(nullable = false)
 	private String nome;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne  //(fetch = FetchType.EAGER)
 	@JoinColumn(name = "estado_id", foreignKey = @ForeignKey(name = "fk_cidade_estado"), nullable = false)
 	Estado estado;
 
