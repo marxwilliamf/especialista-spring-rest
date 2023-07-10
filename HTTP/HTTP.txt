@@ -1,0 +1,27 @@
+Métodos HTTP
+
+IDEMPOTENYE = Que pode ser executado varias vezes sem efeito colateral
+NÃO SEGURO = Que modifica recursos
+SEGURO = Não modifica recursos
+
+
+GET - Idempotente - SEGURO
+POST - Não Idempotente - Não Seguro
+PUT - Idempotente - Não Seguro
+DELETE - Idempotente - Não Seguro
+PATCH - Idempotente - Não Seguro
+HEAD - Idempotente - Seguro
+OPTIONS - Idempotente - Seguro
+
+
+GET: Obter a representação de um recurso;
+POST: Criar um novo recursos;
+PUT: Utilizado para atualizar todos os campos do recurso;
+PATCH: Atualização parcial;
+DELETE: Idempotente pois após deletar um recurso na proxima requisição o delete retorna erro, chama-lo mais de uma vezes não tem efeito colateral;
+HEAD: Apenas para buscar um cabeçalho;
+OPTIONS: Suportado para Gerar uma lista de Métodos Suportada pelo recurso.
+
+
+
+
