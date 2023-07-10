@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,13 +39,20 @@ public class CozinhaController {
 	//@GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }) //este método aceitará os dois desse jeito
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)  //tanto faz usar a constante ou escrever, mas é mais recomandável constante //(produces = "application/json")
 	public List<Cozinha> listar1() {
-		System.out.println("LISTAR 1");
-		return cozinhaRepository.todas();
+		//System.out.println("LISTAR 1");
+		return cozinhaRepository.listar();
 	}
 	
 	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE) //também pode ter um metodo para cada formato
 	public List<Cozinha> listar2() {
 		System.out.println("LISTAR 2");
-		return cozinhaRepository.todas();
+		return cozinhaRepository.listar();
 	}
+	
+	@GetMapping("/{cozinhaId}")
+	public Cozinha buscar(@PathVariable Long cozinhaId) { // = //(@PathVariable("cozinhaId") Long id) { 
+		return cozinhaRepository.buscar(cozinhaId);
+	}
+	
+	
 }

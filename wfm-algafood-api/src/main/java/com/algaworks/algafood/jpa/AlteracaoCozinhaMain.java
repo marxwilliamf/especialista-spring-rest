@@ -23,7 +23,7 @@ public class AlteracaoCozinhaMain {
 		cozinha1.setId(1L);
 		cozinha1.setNome("Brasileira");
 
-		Cozinha cozinha2 = cozinhas.porId(2L);
+		Cozinha cozinha2 = cozinhas.buscar(2L);
 		cozinha2.setNome("Gaúcha");
 
 		//merge não atualiza cozinha1 por isso precisa pegar o return para setar a nova cozinha atualizada já com o Id Gerado
