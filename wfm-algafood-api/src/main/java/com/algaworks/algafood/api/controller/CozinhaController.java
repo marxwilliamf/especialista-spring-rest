@@ -39,14 +39,12 @@ public class CozinhaController {
 	//@GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE }) //este método aceitará os dois desse jeito
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)  //tanto faz usar a constante ou escrever, mas é mais recomandável constante //(produces = "application/json")
 	public List<Cozinha> listar1() {
-		//System.out.println("LISTAR 1");
 		return cozinhaRepository.listar();
 	}
 	
-	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE) //também pode ter um metodo para cada formato
-	public List<Cozinha> listar2() {
-		System.out.println("LISTAR 2");
-		return cozinhaRepository.listar();
+	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
+	public CozinhasXmlWrapper listar2() {
+		return new CozinhasXmlWrapper(cozinhaRepository.listar());
 	}
 	
 	@GetMapping("/{cozinhaId}")
