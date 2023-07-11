@@ -5,11 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 //import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -51,10 +51,14 @@ public class CozinhaController {
 		return new CozinhasXmlWrapper(cozinhaRepository.listar());
 	}
 
-	@ResponseStatus(HttpStatus.CREATED) //caso queira modificar o código de status, porém 201 não é o correto para essa requisição
+	//@ResponseStatus(HttpStatus.OK) //caso queira modificar o código de status
 	@GetMapping("/{cozinhaId}")
-	public Cozinha buscar(@PathVariable Long cozinhaId) { // = //(@PathVariable("cozinhaId") Long id) { 
-		return cozinhaRepository.buscar(cozinhaId);
+	public ResponseEntity<Cozinha> buscar(@PathVariable Long cozinhaId) { // = //(@PathVariable("cozinhaId") Long id) { 
+		Cozinha cozinha = cozinhaRepository.buscar(cozinhaId);
+		
+		//return ResponseEntity.status(HttpStatus.OK).build(); //caso não tenha um corpo para retornar
+		//return ResponseEntity.status(HttpStatus.OK).body(cozinha);//
+		 return ResponseEntity.ok(cozinha); //shortcut
 	}
 	
 	
