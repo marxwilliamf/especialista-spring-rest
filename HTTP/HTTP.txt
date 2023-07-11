@@ -23,5 +23,42 @@ HEAD: Apenas para buscar um cabeçalho;
 OPTIONS: Suportado para Gerar uma lista de Métodos Suportada pelo recurso.
 
 
+STATUS:
+
+200 - 299: Sucesso
+200: Ok;
+201: Criado;
+204: ok, sem conteúdo, delete;
+
+300-399: Redirecionamento;
+300: 
+301: Movido permanentemente;
+302: Existe mas foi alterado temporáriamente: necessário adicionar cabeçalho location;
+
+
+400-499: Erro por parte de quem consome a API, quem faz a requisição;
+400: Requisição mal feita
+401: não autorizado
+403: Proibido;
+404: Recurso solicitado não existe, não foi encontrado;
+405: Método=Verbo não permitido
+406: Não aceito: servidor não retorna resposta no media type requisitado;
+
+500-599: Erro no servidor: comum em erros com tratamento de exceptions
+500: Erro interno no servidor;
+503: Serviço indisponível: servidor em manutenção ou sobrecaregado;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
