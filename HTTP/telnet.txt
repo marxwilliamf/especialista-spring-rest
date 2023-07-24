@@ -12,4 +12,53 @@ Host: http://google.com.br
 Accept: text/html
 
 
+GET / HTTP/1.1
+Host: api.algafood.local:8080/cozinhas
+Accept: application/json
+
+GET / HTTP/1.1
+Host: 127.0.0.1:8080/cozinhas
+Accept: application/json
+
+
+
+
+POST /cozinhas HTTP/1.1
+Content-Type: application/json
+
+{
+	"nome": "Brasileira"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
