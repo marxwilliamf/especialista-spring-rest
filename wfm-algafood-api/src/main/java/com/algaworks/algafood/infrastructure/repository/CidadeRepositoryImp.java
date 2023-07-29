@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.algaworks.algafood.domain.model.Cidade;
 import com.algaworks.algafood.domain.repository.CidadeRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 @Component
 public class CidadeRepositoryImp implements CidadeRepository{

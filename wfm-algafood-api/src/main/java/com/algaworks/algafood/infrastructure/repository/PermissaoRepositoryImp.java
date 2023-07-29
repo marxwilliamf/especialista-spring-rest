@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.algaworks.algafood.domain.model.Permissao;
 import com.algaworks.algafood.domain.repository.PermissaoRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 @Component
 public class PermissaoRepositoryImp implements PermissaoRepository{

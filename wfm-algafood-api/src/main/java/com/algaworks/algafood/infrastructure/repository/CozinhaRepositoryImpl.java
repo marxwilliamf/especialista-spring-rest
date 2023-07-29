@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.repository.CozinhaRepository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
 //Pincelada sobre  padrão Agregate e seu aAregate Root de uma instacia pricipal dentro de um domínio, e como uma 
 //instancias de fora do dominio agregado devem referenciar o a classe de Agregate Root para manter a integridade

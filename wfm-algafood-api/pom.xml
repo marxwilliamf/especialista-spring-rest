@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.7.RELEASE</version>
+		<version>3.0.5</version>
 		<relativePath/> <!-- lookup parent from repository -->		
 	</parent>
 	
@@ -17,9 +17,9 @@
 	<description>API de delivery de comida</description>
 	
 	<properties>
-		<java.version>12</java.version>
-        <maven.compiler.source>12</maven.compiler.source>
-        <maven.compiler.target>12</maven.compiler.target>
+		<java.version>19</java.version>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
 	</properties>
 	
 	<dependencies>
@@ -82,10 +82,10 @@
           <configuration>
             <verbose>true</verbose>
             <fork>true</fork>
-            <executable>C:\Program Files\Java\jdk-12.0.2\bin\javac</executable>
-			<compilerVersion>12</compilerVersion>
-            <source>12</source>
-            <target>12</target>
+            <executable>C:\Program Files\Java\jdk-19.0.2\bin\javac</executable>
+			<compilerVersion>19</compilerVersion>
+            <source>19</source>
+            <target>19</target>
           </configuration>
         </plugin>
 		</plugins>
