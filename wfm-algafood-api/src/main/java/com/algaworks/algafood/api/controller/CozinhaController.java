@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 //import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.algaworks.algafood.api.model.CozinhasXmlWrapper;
 import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.repository.CozinhaRepository;
 
@@ -44,19 +45,20 @@ public class CozinhaController {
 	
 	
 
-	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)  //tanto faz usar a constante ou escrever, mas é mais recomandável constante //(produces = "application/json")
+	@GetMapping
 	public List<Cozinha> listar1() {
 		return cozinhaRepository.listar();
 	}
 	
 	
-	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE)
+	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE, consumes = MediaType.APPLICATION_XML_VALUE)
 	public CozinhasXmlWrapper listar2() {
 		return new CozinhasXmlWrapper(cozinhaRepository.listar());
 	}
 
-	//@ResponseStatus(HttpStatus.OK) //caso queira modificar o código de status
-	@GetMapping("/{cozinhaId}")
+	//@ResponseStatus(HttpStatus.OK)
+	
+	@GetMapping(value = "/{cozinhaId}")
 	public ResponseEntity<Cozinha> buscar(@PathVariable Long cozinhaId) { // = //(@PathVariable("cozinhaId") Long id) { 
 		Cozinha cozinha = cozinhaRepository.buscar(cozinhaId);
 		
@@ -69,13 +71,6 @@ public class CozinhaController {
 
 	}
 	
-	////////////////// se não quizesse retornar nada
-//	@PostMapping
-//	@ResponseStatus(HttpStatus.CREATED)
-//	public void adiciona(@RequestBody Cozinha cozinha) {
-//		cozinhaRepository.adicionar(cozinha);
-//	}
-///////////////////////////////
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)

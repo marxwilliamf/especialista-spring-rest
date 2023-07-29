@@ -8,8 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 @Component
 public class RestauranteRepositoryImp implements RestauranteRepository {
