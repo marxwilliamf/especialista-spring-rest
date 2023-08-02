@@ -40,7 +40,7 @@ public class CozinhaRepositoryImpl implements CozinhaRepository{
 	
 	@Transactional  //indica que o metodo vai ser rodado dentro de uma transação
 	@Override
-	public Cozinha adicionar(Cozinha cozinha) {
+	public Cozinha salvar(Cozinha cozinha) {
 		return manager.merge(cozinha);
 	}
 	

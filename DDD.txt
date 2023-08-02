@@ -1,0 +1,17 @@
+DDD
+
+
+Usar Service para que o Controlador não fazer operações que alterem o estado do sistema
+para isso usar:
+	Domain Service - É uma operação sem estado que realiza uma tarefa específica do domínio(Tarefa de Negócio).
+	Que serve para:
+		Fazer modificaçoes no estado da aplicação, processo de negócio
+
+
+
+
+Linguágem Obíqua - Linguágem comum falada pelas pessoas do negócio.
+	Ubiquação: Razão formal de algo estar em um determinado lugar. (Michaelis, 2020);
+
+
+

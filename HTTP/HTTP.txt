@@ -43,6 +43,9 @@ STATUS:
 404: Recurso solicitado não existe, não foi encontrado;
 405: Método=Verbo não permitido
 406: Não aceito: servidor não retorna resposta no media type requisitado;
+409: Conflict, erro por parte do cliente que quer por exemplo deletar um objeto que tem alguma constraint;
+
+
 
 500-599: Erro no servidor: comum em erros com tratamento de exceptions
 500: Erro interno no servidor;
