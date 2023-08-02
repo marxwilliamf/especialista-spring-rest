@@ -37,6 +37,11 @@ Content-type: application/json
 }
 
 
+DELETE /cozinhas/{id} HTTP/1.1
+
+
+
+
 
 
 
