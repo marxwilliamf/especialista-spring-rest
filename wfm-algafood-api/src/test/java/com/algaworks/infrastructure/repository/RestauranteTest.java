@@ -16,7 +16,7 @@ public class RestauranteTest extends NewApplication{
 	
 	@Test
 	public void todosRestaurantes() {
-		List<Restaurante> todosRestaurantes = restaurantes.todos();
+		List<Restaurante> todosRestaurantes = restaurantes.listar();
 	
 		System.out.println("\nListar Todos Teste:");
 		listarRestaurantes(todosRestaurantes);
@@ -30,7 +30,7 @@ public class RestauranteTest extends NewApplication{
 	
 	@Test
 	public void buscaPorId() {
-		Restaurante restaurante = restaurantes.porId(2L);
+		Restaurante restaurante = restaurantes.buscar(2L);
 		
 		System.out.println("\nBusca por Id Teste:");
 		System.out.println(restaurante.toString());
@@ -46,20 +46,20 @@ public class RestauranteTest extends NewApplication{
 		System.out.println("\nAdicionar Restaurante Teste:");
 		restaurantes.adicionar(restaurante);
 		
-		List<Restaurante> todosRestaurantes = restaurantes.todos();
+		List<Restaurante> todosRestaurantes = restaurantes.listar();
 		listarRestaurantes(todosRestaurantes);
 	}
 	
 	@Test
 	void atualizar() {
 		
-		Restaurante restaurante = restaurantes.porId(2L);
+		Restaurante restaurante = restaurantes.buscar(2L);
 		restaurante.setNome("Churrasco Gaúcho");
 
 		System.out.println("\nAtualizar por Id Teste:");
 		restaurantes.adicionar(restaurante);
 		
-		List<Restaurante> todosRestaurantes = restaurantes.todos();
+		List<Restaurante> todosRestaurantes = restaurantes.listar();
 		listarRestaurantes(todosRestaurantes);
 		
 	}
@@ -72,7 +72,7 @@ public class RestauranteTest extends NewApplication{
 		System.out.println("\nRemover Restaurante Teste:");
 		restaurantes.remover(restaurante);
 		
-		List<Restaurante> todosRestaurantes = restaurantes.todos();
+		List<Restaurante> todosRestaurantes = restaurantes.listar();
 		listarRestaurantes(todosRestaurantes);
 	}
 	

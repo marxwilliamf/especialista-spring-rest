@@ -22,6 +22,7 @@ public class Restaurante {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	//nullable = false é usado somente para criar o DDL, não é um validador, mas enquanto a estrutura do banco for criada pelo código, esse campo não aceitará null
 	@Column(nullable = false)  
 	private String nome;
