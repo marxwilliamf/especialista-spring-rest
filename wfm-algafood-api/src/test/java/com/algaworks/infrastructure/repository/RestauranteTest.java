@@ -44,7 +44,7 @@ public class RestauranteTest extends NewApplication{
 		restaurante.setTaxaFrete(new BigDecimal(23));
 
 		System.out.println("\nAdicionar Restaurante Teste:");
-		restaurantes.adicionar(restaurante);
+		restaurantes.salvar(restaurante);
 		
 		List<Restaurante> todosRestaurantes = restaurantes.listar();
 		listarRestaurantes(todosRestaurantes);
@@ -57,7 +57,7 @@ public class RestauranteTest extends NewApplication{
 		restaurante.setNome("Churrasco Gaúcho");
 
 		System.out.println("\nAtualizar por Id Teste:");
-		restaurantes.adicionar(restaurante);
+		restaurantes.salvar(restaurante);
 		
 		List<Restaurante> todosRestaurantes = restaurantes.listar();
 		listarRestaurantes(todosRestaurantes);
