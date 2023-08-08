@@ -18,7 +18,7 @@ public class CidadeTest extends NewApplication{
 	
 	@Test
 	public void todosCidades() {
-		List<Cidade> todasCidades = cidades.todas();
+		List<Cidade> todasCidades = cidades.listar();
 	
 		System.out.println("\n\n\nListar Todos Teste:\\n\\n");
 		Cidade.listar(todasCidades);
@@ -26,7 +26,7 @@ public class CidadeTest extends NewApplication{
 	
 	@Test
 	public void buscaPorId() {
-		Cidade cidade = cidades.porId(2L);
+		Cidade cidade = cidades.buscar(2L);
 		
 		System.out.println("\nBusca por Id Teste:");
 		cidade.printCmd();
@@ -37,26 +37,26 @@ public class CidadeTest extends NewApplication{
 		
 		Cidade cidade = new Cidade();
 		cidade.setNome("Copacabana");
-		Estado estado = estados.porId(5L);
+		Estado estado = estados.buscar(5L);
 		cidade.setEstado(estado);
 
 		System.out.println("\nAdicionar Cidade Teste:");
-		cidades.adicionar(cidade);
+		cidades.salvar(cidade);
 		
-		List<Cidade> todosCidades = cidades.todas();
+		List<Cidade> todosCidades = cidades.listar();
 		Cidade.listar(todosCidades);
 	}
 	
 	@Test
 	void atualizar() {
 		
-		Cidade cidade = cidades.porId(2L);
+		Cidade cidade = cidades.buscar(2L);
 		cidade.setNome("Gramado RS");
 
 		System.out.println("\nAtualizar por Id Teste:");
-		cidades.adicionar(cidade);
+		cidades.salvar(cidade);
 		
-		List<Cidade> todosCidades = cidades.todas();
+		List<Cidade> todosCidades = cidades.listar();
 		Cidade.listar(todosCidades);
 		
 	}
@@ -67,9 +67,9 @@ public class CidadeTest extends NewApplication{
 		cidade.setId(4L);
 		
 		System.out.println("\nRemover Cidade Teste:");
-		cidades.remover(cidade);
+		cidades.remover(cidade.getId());
 		
-		List<Cidade> todosCidades = cidades.todas();
+		List<Cidade> todosCidades = cidades.listar();
 		Cidade.listar(todosCidades);
 	}
 	
