@@ -2,7 +2,7 @@ package com.algaworks.algafood.infrastructure.repository;
 
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.algaworks.algafood.domain.model.Restaurante;
@@ -11,7 +11,8 @@ import com.algaworks.algafood.domain.repository.RestauranteRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
-@Component
+// @Component
+@Repository //possui um tradutor de exception, para exceções do spring
 public class RestauranteRepositoryImp implements RestauranteRepository {
 
 	
