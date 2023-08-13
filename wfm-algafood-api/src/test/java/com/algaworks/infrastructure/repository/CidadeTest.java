@@ -18,7 +18,7 @@ public class CidadeTest extends NewApplication{
 	
 	@Test
 	public void todosCidades() {
-		List<Cidade> todasCidades = cidades.listar();
+		List<Cidade> todasCidades = cidades.findAll();
 	
 		System.out.println("\n\n\nListar Todos Teste:\\n\\n");
 		Cidade.listar(todasCidades);
@@ -26,7 +26,7 @@ public class CidadeTest extends NewApplication{
 	
 	@Test
 	public void buscaPorId() {
-		Cidade cidade = cidades.buscar(2L);
+		Cidade cidade = cidades.findById(2L).get(); //Não recomendável fazer essa get em produção
 		
 		System.out.println("\nBusca por Id Teste:");
 		cidade.printCmd();
@@ -41,22 +41,22 @@ public class CidadeTest extends NewApplication{
 		cidade.setEstado(estado);
 
 		System.out.println("\nAdicionar Cidade Teste:");
-		cidades.salvar(cidade);
+		cidades.save(cidade);
 		
-		List<Cidade> todosCidades = cidades.listar();
+		List<Cidade> todosCidades = cidades.findAll();
 		Cidade.listar(todosCidades);
 	}
 	
 	@Test
 	void atualizar() {
 		
-		Cidade cidade = cidades.buscar(2L);
+		Cidade cidade = cidades.findById(2L).get();
 		cidade.setNome("Gramado RS");
 
 		System.out.println("\nAtualizar por Id Teste:");
-		cidades.salvar(cidade);
+		cidades.save(cidade);
 		
-		List<Cidade> todosCidades = cidades.listar();
+		List<Cidade> todosCidades = cidades.findAll();
 		Cidade.listar(todosCidades);
 		
 	}
@@ -67,9 +67,9 @@ public class CidadeTest extends NewApplication{
 		cidade.setId(4L);
 		
 		System.out.println("\nRemover Cidade Teste:");
-		cidades.remover(cidade.getId());
+		cidades.deleteById(cidade.getId());
 		
-		List<Cidade> todosCidades = cidades.listar();
+		List<Cidade> todosCidades = cidades.findAll();
 		Cidade.listar(todosCidades);
 	}
 	
