@@ -23,12 +23,12 @@ public class AlteracaoCozinhaMain {
 		cozinha1.setId(1L);
 		cozinha1.setNome("Brasileira");
 
-		Cozinha cozinha2 = cozinhas.buscar(2L);
+		Cozinha cozinha2 = cozinhas.findById(2L).get();
 		cozinha2.setNome("Gaúcha");
 
 		//merge não atualiza cozinha1 por isso precisa pegar o return para setar a nova cozinha atualizada já com o Id Gerado
-		cozinha1 = cozinhas.salvar(cozinha1); 
-		cozinha2 = cozinhas.salvar(cozinha2);
+		cozinha1 = cozinhas.save(cozinha1); 
+		cozinha2 = cozinhas.save(cozinha2);
 		
 		System.out.printf("%d - %s\n", cozinha1.getId(), cozinha1.getNome());
 		System.out.printf("%d - %s\n", cozinha2.getId(), cozinha2.getNome());

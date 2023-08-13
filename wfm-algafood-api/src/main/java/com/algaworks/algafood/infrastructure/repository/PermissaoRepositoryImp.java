@@ -2,7 +2,6 @@ package com.algaworks.algafood.infrastructure.repository;
 
 import java.util.List;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
