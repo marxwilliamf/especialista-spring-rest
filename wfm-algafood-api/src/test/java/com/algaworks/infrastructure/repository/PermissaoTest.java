@@ -13,14 +13,14 @@ public class PermissaoTest extends NewApplication{
 	@Test
 	public void todasPermissoes() {
 		System.out.println("\n\n\nListando todas permissoes:");
-		List<Permissao> todasPermissoes = permissoes.todas();
+		List<Permissao> todasPermissoes = permissoes.findAll();
 		Permissao.listar(todasPermissoes);	
 	}
 	
 	@Test
 	public void encontrar1Permissao() {
 		System.out.println("\n\n\nEncontrar Permissão\n");
-		Permissao permissao = permissoes.porId(1L);
+		Permissao permissao = permissoes.findById(1L).get();
 		permissao.printCmd();
 	}
 	
@@ -28,7 +28,7 @@ public class PermissaoTest extends NewApplication{
 	public void addicionarPermissao() {
 		System.out.println("\n\n\nAdicionar Permissão\n");
 		Permissao permissao = new Permissao("AgendarHorario", "Permite ao cliente agendar Horário");
-		permissoes.adicionar(permissao);
+		permissoes.save(permissao);
 		
 		todasPermissoes();
 	}
@@ -36,7 +36,7 @@ public class PermissaoTest extends NewApplication{
 	@Test
 	public void removerPermissao() {
 		System.out.println("\n\n\nRemovendo Permissão\n");
-		permissoes.remover(permissoes.porId(10L));
+		permissoes.delete(permissoes.findById(10L).get());
 		
 		todasPermissoes();
 	}

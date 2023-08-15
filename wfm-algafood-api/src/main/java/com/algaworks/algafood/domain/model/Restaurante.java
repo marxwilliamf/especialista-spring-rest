@@ -1,6 +1,7 @@
 package com.algaworks.algafood.domain.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,5 +34,11 @@ public class Restaurante {
 	@ManyToOne
 	@JoinColumn(name =  "cozinha_id", foreignKey = @ForeignKey(name = "fk_restaurante_cozinha")) // cozinha_id seria já o nome por padrão
 	private Cozinha cozinha;
+
 	
+	public static void listarRestaurantes(List<Restaurante> todosRestaurantes) {
+		for(Restaurante restaurante: todosRestaurantes) {
+			System.out.println(restaurante.toString());
+		}
+	}
 }

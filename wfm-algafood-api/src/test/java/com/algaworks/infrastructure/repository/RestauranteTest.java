@@ -16,21 +16,15 @@ public class RestauranteTest extends NewApplication{
 	
 	@Test
 	public void todosRestaurantes() {
-		List<Restaurante> todosRestaurantes = restaurantes.listar();
+		List<Restaurante> todosRestaurantes = restaurantes.findAll();
 	
 		System.out.println("\nListar Todos Teste:");
-		listarRestaurantes(todosRestaurantes);
-	}
-	
-	public void listarRestaurantes(List<Restaurante> todosRestaurantes) {
-		for(Restaurante restaurante: todosRestaurantes) {
-			System.out.println(restaurante.toString());
-		}
+		Restaurante.listarRestaurantes(todosRestaurantes);
 	}
 	
 	@Test
 	public void buscaPorId() {
-		Restaurante restaurante = restaurantes.buscar(2L);
+		Restaurante restaurante = restaurantes.findById(2L).get();
 		
 		System.out.println("\nBusca por Id Teste:");
 		System.out.println(restaurante.toString());
@@ -44,36 +38,39 @@ public class RestauranteTest extends NewApplication{
 		restaurante.setTaxaFrete(new BigDecimal(23));
 
 		System.out.println("\nAdicionar Restaurante Teste:");
-		restaurantes.salvar(restaurante);
+		restaurantes.save(restaurante);
 		
-		List<Restaurante> todosRestaurantes = restaurantes.listar();
-		listarRestaurantes(todosRestaurantes);
+		List<Restaurante> todosRestaurantes = restaurantes.findAll();
+		Restaurante.listarRestaurantes(todosRestaurantes);
 	}
 	
 	@Test
 	void atualizar() {
 		
-		Restaurante restaurante = restaurantes.buscar(2L);
+		Restaurante restaurante = restaurantes.findById(2L).get();
 		restaurante.setNome("Churrasco Gaúcho");
 
 		System.out.println("\nAtualizar por Id Teste:");
-		restaurantes.salvar(restaurante);
+		restaurantes.save(restaurante);
 		
-		List<Restaurante> todosRestaurantes = restaurantes.listar();
-		listarRestaurantes(todosRestaurantes);
+		List<Restaurante> todosRestaurantes = restaurantes.findAll();
+		Restaurante.listarRestaurantes(todosRestaurantes);
 		
 	}
 	
 	@Test
 	public void remove() {
+		List<Restaurante> todosRestaurantes = restaurantes.findAll();
+		Restaurante.listarRestaurantes(todosRestaurantes);
+		
 		Restaurante restaurante = new Restaurante();
 		restaurante.setId(1L);
 		
 		System.out.println("\nRemover Restaurante Teste:");
-		restaurantes.remover(restaurante);
+		restaurantes.delete(restaurante);
 		
-		List<Restaurante> todosRestaurantes = restaurantes.listar();
-		listarRestaurantes(todosRestaurantes);
+		todosRestaurantes = restaurantes.findAll();
+		Restaurante.listarRestaurantes(todosRestaurantes);
 	}
 	
 }

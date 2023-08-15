@@ -15,7 +15,7 @@ public class EstadoTest extends NewApplication{
 	
 	@Test
 	public void todosEstados() {
-		List<Estado> todosEstados = estados.listar();
+		List<Estado> todosEstados = estados.findAll();
 	
 		System.out.println("\n\n\nListar Todos Estados:\\n\\n");
 		Estado.listar(todosEstados);
@@ -23,7 +23,7 @@ public class EstadoTest extends NewApplication{
 	
 	@Test
 	public void buscaPorId() {
-		Estado estado = estados.buscar(5L);
+		Estado estado = estados.findById(5L).get();
 		
 		System.out.println("\nBusca por Id Teste:");
 		estado.printCmd();
@@ -37,22 +37,22 @@ public class EstadoTest extends NewApplication{
 		estado.setNome("PR");
 
 		System.out.println("\nAdicionar Estado Teste:");
-		estados.salvar(estado);
+		estados.save(estado);
 		
-		List<Estado> todosEstados = estados.listar();
+		List<Estado> todosEstados = estados.findAll();
 		Estado.listar(todosEstados);
 	}
 	
 	@Test
 	void atualizar() {
 		
-		Estado estado = estados.buscar(6L);
+		Estado estado = estados.findById(6L).get();
 		estado.setNome("PR");
 
 		System.out.println("\nAtualizar por Id Teste:");
-		estados.salvar(estado);
+		estados.save(estado);
 		
-		List<Estado> todosEstados = estados.listar();
+		List<Estado> todosEstados = estados.findAll();
 		Estado.listar(todosEstados);
 		
 	}
@@ -63,9 +63,9 @@ public class EstadoTest extends NewApplication{
 		estado.setId(2L);
 		
 		System.out.println("\nRemover Estado Teste:");
-		estados.remover(estado.getId());
+		estados.deleteById(estado.getId());
 		
-		List<Estado> todosEstados = estados.listar();
+		List<Estado> todosEstados = estados.findAll();
 		Estado.listar(todosEstados);
 	}
 	

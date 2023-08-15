@@ -37,7 +37,7 @@ public class CidadeTest extends NewApplication{
 		
 		Cidade cidade = new Cidade();
 		cidade.setNome("Copacabana");
-		Estado estado = estados.buscar(5L);
+		Estado estado = estados.findById(5L).get();
 		cidade.setEstado(estado);
 
 		System.out.println("\nAdicionar Cidade Teste:");

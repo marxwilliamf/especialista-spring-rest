@@ -18,7 +18,7 @@ public class BuscaFormaPagamento {
 		
 		FormaPagamentoRepository formaPagamentoRepository = applicationContext.getBean(FormaPagamentoRepository.class);
 		
-		List<FormaPagamento> formasDePagamento = formaPagamentoRepository.todas();
+		List<FormaPagamento> formasDePagamento = formaPagamentoRepository.findAll();
 		
 		
 		for(FormaPagamento f:formasDePagamento) {
